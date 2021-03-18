@@ -492,7 +492,7 @@ ill-conditioned.
 
 ### Error Metric 
 
-![](images/image19.png)
+![](images/error.png)
 
 * * * * *
 
