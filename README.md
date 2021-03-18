@@ -1,10 +1,3 @@
-EEE 361
-
-HW2
-
-Report
-
-![](images/image20.png)
 
 Umur Gogebakan
 
