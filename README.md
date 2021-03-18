@@ -6,7 +6,6 @@ Umur Gogebakan
 CS
 
 * * * * *
-* 
 Problem
 =======
 
