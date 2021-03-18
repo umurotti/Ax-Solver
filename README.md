@@ -7,7 +7,7 @@ CS
 
 * * * * *
 
-[Problem](#h.shed7c405gw3)        [3](#h.shed7c405gw3)
+[Problem](#h-shed7c405gw3)        [3](#h-shed7c405gw3)
 
 [Algorithms for the
 Solution](#h.fo8olvbpasf4)        [4](#h.fo8olvbpasf4)
@@ -70,7 +70,7 @@ Solution](#h.fo8olvbpasf4)        [4](#h.fo8olvbpasf4)
 
  {#h.8u23vzhx0dni .c34}
 
-Problem {#h.shed7c405gw3 .c39}
+Problem(#h-shed7c405gw3 .c39)
 =======
 
 We want to solve system of linear equations that has a major application
@@ -131,10 +131,6 @@ which yields:
 \* transpose(U);
 
 4end
-
-   
-
-   
 
 * * * * *
 
@@ -226,43 +222,7 @@ stopping criterion:
 
 22        end
 
-23end
-
-   
-
-   
-
-   
-
-   
-
-   
-
-       
-
-       
-
-       
-
-       
-
-       
-
-       
-
-       
-
-       
-
-       
-
-       
-
-           
-
-       
-
-       
+23end     
 
 ![](images/image36.jpg)
 
