@@ -99,7 +99,7 @@ symmetric positive definite. The main different motivation behind the CG
 is the exploitation of the Hessenberg matrix and measuring A-norm is
 very appropriate to measure the error after each iteration.
 
-### ![](images/image27.png)[[1]](#ftnt_ref1) 
+### ![](images/image27.png)[[1]]
 
 The code below is the implementation of this algorithm with added
 stopping criterion:
@@ -200,7 +200,7 @@ So;
 
 ![](images/image13.png)
 
-![](images/image32.png)[[2]](#ftnt2)
+![](images/image32.png)[[2]]
 
 Here, finding the minimizing y can be done by using QR factorization for
 solving least squares:
@@ -215,7 +215,7 @@ Then it follows,
 
 ![](images/image17.png)
 
-### ![](images/image35.png)[[3]](#ftnt3)
+### ![](images/image35.png)[[3]]
 
 The code below is the implementation of this algorithm with added
 stopping criterion:
@@ -351,7 +351,7 @@ iteration that uses only qn-1 and qn for the computation of qn+1. That
 removes the nested inner second for loop and achieves better
 computational efficiency.
 
-### ![](images/image25.png)^[[4]](#ftnt4)^ 
+### ![](images/image25.png)[[4]]
 
 The code below is the implementation of Lanczos based MINRES algorithm
 with added stopping criterion:
