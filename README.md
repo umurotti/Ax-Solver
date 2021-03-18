@@ -99,7 +99,7 @@ symmetric positive definite. The main different motivation behind the CG
 is the exploitation of the Hessenberg matrix and measuring A-norm is
 very appropriate to measure the error after each iteration.
 
-### ![](images/image27.png)[[1]](#ftnt1) 
+### ![](images/image27.png)[[1]](#ftnt_ref1) 
 
 The code below is the implementation of this algorithm with added
 stopping criterion:
