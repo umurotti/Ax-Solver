@@ -463,7 +463,7 @@ scaled.
 
 ### Comment
 
-Please refer to [Comment section](#h.l4pzkhlpwg9r) Figure 3 as Figure 4
+Please refer to Comment section of Figure 3 as Figure 4
 is indistinguishably similar.
 
 * * * * *
