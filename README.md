@@ -99,7 +99,7 @@ symmetric positive definite. The main different motivation behind the CG
 is the exploitation of the Hessenberg matrix and measuring A-norm is
 very appropriate to measure the error after each iteration.
 
-### ![](images/image27.png)^[[1]](#ftnt1)^ 
+### ![](images/image27.png)[[1]](#ftnt1) 
 
 The code below is the implementation of this algorithm with added
 stopping criterion:
@@ -200,7 +200,7 @@ So;
 
 ![](images/image13.png)
 
-![](images/image32.png)^[[2]](#ftnt2)^
+![](images/image32.png)[[2]](#ftnt2)
 
 Here, finding the minimizing y can be done by using QR factorization for
 solving least squares:
@@ -215,7 +215,7 @@ Then it follows,
 
 ![](images/image17.png)
 
-### ![](images/image35.png)^[[3]](#ftnt3)^ 
+### ![](images/image35.png)[[3]](#ftnt3)
 
 The code below is the implementation of this algorithm with added
 stopping criterion:
