@@ -6,71 +6,8 @@ Umur Gogebakan
 CS
 
 * * * * *
-
-[Problem](#h-shed7c405gw3)        [3](#h-shed7c405gw3)
-
-[Algorithms for the
-Solution](#h.fo8olvbpasf4)        [4](#h.fo8olvbpasf4)
-
-[Pseudoinverse (A+)](#h.stv9pk4y07rt)        [4](#h.stv9pk4y07rt)
-
-[Code](#h.stehmp8sqfro)        [4](#h.stehmp8sqfro)
-
-[Comment](#h.bzn2mvc8m74f)        [5](#h.bzn2mvc8m74f)
-
-[Conjugate Gradients (CG)](#h.dlqaa4oxs701)        [6](#h.dlqaa4oxs701)
-
-[Code](#h.6cbn3ris1xik)        [7](#h.6cbn3ris1xik)
-
-[Comment](#h.zho8jx3k7yrj)        [8](#h.zho8jx3k7yrj)
-
-[Generalized Minimum Residual
-(GMRES)](#h.6bfcudabpj2f)        [9](#h.6bfcudabpj2f)
-
-[Code](#h.tlyjnjuzlxuy)        [11](#h.tlyjnjuzlxuy)
-
-[Comment](#h.l4pzkhlpwg9r)        [12](#h.l4pzkhlpwg9r)
-
-[Minimum Residual
-(MINRES)](#h.xomo3cwz8xz7)        [13](#h.xomo3cwz8xz7)
-
-[Code](#h.275bys5iyhpx)        [14](#h.275bys5iyhpx)
-
-[Comment](#h.2n9p9b9xd7yg)        [15](#h.2n9p9b9xd7yg)
-
-[Detailed Analysis of CG](#h.x3b9mevz3kuu)        [16](#h.x3b9mevz3kuu)
-
-[Stopping Criterion](#h.wc67uxdyg1tp)        [16](#h.wc67uxdyg1tp)
-
-[Error Metric](#h.d8fe1ey05ab4)        [16](#h.d8fe1ey05ab4)
-
-[Comment](#h.a9slcpcjyaju)        [19](#h.a9slcpcjyaju)
-
-[Comment](#h.r0zarb5tnb4h)        [22](#h.r0zarb5tnb4h)
-
-[Comment](#h.opwa147cwzze)        [25](#h.opwa147cwzze)
-
-[Appendix](#h.xvindrov989h)        [26](#h.xvindrov989h)
-
-[Codes](#h.4zdxa69rmph4)        [26](#h.4zdxa69rmph4)
-
-[HW2\_main.m](#h.oo7zs6fk1e1u)        [26](#h.oo7zs6fk1e1u)
-
-[produce\_S.m](#h.axfc2xjd89su)        [30](#h.axfc2xjd89su)
-
-[psuedo\_inverse.m](#h.muk6cf90pt9x)        [31](#h.muk6cf90pt9x)
-
-[CG.m](#h.mjof169ux975)        [32](#h.mjof169ux975)
-
-[GMRES.m](#h.md5v723gwvto)        [33](#h.md5v723gwvto)
-
-[MINRES.m](#h.nx693wm0l48r)        [34](#h.nx693wm0l48r)
-
-* * * * *
-
- {#h.8u23vzhx0dni .c34}
-
-Problem(#h-shed7c405gw3 .c39)
+* 
+Problem
 =======
 
 We want to solve system of linear equations that has a major application
@@ -94,10 +31,10 @@ iterative and the other one is not (Pseudoinverse). The other one
 
 * * * * *
 
-Algorithms for the Solution {#h.fo8olvbpasf4 .c45}
+Algorithms for the Solution
 ===========================
 
-Pseudoinverse (![](images/image2.png)) {#h.stv9pk4y07rt .c21}
+Pseudoinverse (![](images/image2.png))
 --------------------------------------
 
 Let ![](images/image3.png) be the solution found for the equation,
@@ -121,7 +58,7 @@ which yields:
 
 ![](images/image8.png)
 
-### Code {#h.stehmp8sqfro .c41}
+### Code
 
 1function [A\_psuedo] = psuedo\_inverse(A)
 
@@ -134,15 +71,13 @@ which yields:
 
 * * * * *
 
- {#h.55rbsd937sg2 .c21 .c58}
-
 ![](images/image30.jpg)
 
 Figure 1: ES,i values with respect to sigma for Pseudoinverse algorithm
 where size m ∈ {100, 500, 2500} and τ ∈ {0.1, 0.01}; x and y axis are
 log scaled.
 
-### Comment {#h.bzn2mvc8m74f .c29}
+### Comment
 
 Figure 1 indicates that as the noise (σ) increases, error ES,i also
 increases. The trend also indicates that error is less for small tau
@@ -155,7 +90,7 @@ yet for large matrices alteration becomes significant.
 
 * * * * *
 
-Conjugate Gradients (CG) {#h.dlqaa4oxs701 .c21}
+Conjugate Gradients (CG)
 ------------------------
 
 The conjugate gradient method is using the original Krylov subspace
@@ -165,7 +100,7 @@ symmetric positive definite. The main different motivation behind the CG
 is the exploitation of the Hessenberg matrix and measuring A-norm is
 very appropriate to measure the error after each iteration.
 
-### ![](images/image27.png)^[[1]](#ftnt1)^ {#h.4grpmuxmopa9 .c29}
+### ![](images/image27.png)^[[1]](#ftnt1)^ 
 
 The code below is the implementation of this algorithm with added
 stopping criterion:
@@ -174,7 +109,7 @@ stopping criterion:
 
 * * * * *
 
-### Code {#h.6cbn3ris1xik .c29}
+### Code 
 
  1function [x\_n, i, error] = CG(A, b, maximum\_iteration\_number, tol)
 
@@ -229,7 +164,7 @@ stopping criterion:
 Figure 2: ES,i values with respect to sigma for CG algorithm where size
 m ∈ {100, 500, 2500} and τ ∈ {0.1, 0.01}; x and y axis are log scaled.
 
-### Comment {#h.zho8jx3k7yrj .c29}
+### Comment 
 
 Figure 2 indicates that error ES,i increases as noise increases. Similar
 to Figure 1 for the case where size is 2500 and tau is 0.1, error is
@@ -246,7 +181,7 @@ Pseudoinverse, this algorithm computes the answer in a much faster way.
 
 * * * * *
 
-Generalized Minimum Residual (GMRES) {#h.6bfcudabpj2f .c21}
+Generalized Minimum Residual (GMRES) 
 ------------------------------------
 
 The idea of GMRES is, at step n to approximate x\* by the vector
@@ -281,7 +216,7 @@ Then it follows,
 
 ![](images/image17.png)
 
-### ![](images/image35.png)^[[3]](#ftnt3)^ {#h.t3iwo4a9u9q4 .c51}
+### ![](images/image35.png)^[[3]](#ftnt3)^ 
 
 The code below is the implementation of this algorithm with added
 stopping criterion:
@@ -295,7 +230,7 @@ is not covered in class and not asked for.
 
 * * * * *
 
-### Code {#h.tlyjnjuzlxuy .c29}
+### Code 
 
  1function [x, n, error] = GMRES(A, b, maximum\_iteration\_number, tol)
 
@@ -379,7 +314,7 @@ Figure 3: ES,i values with respect to sigma for GMRES algorithm where
 size m ∈ {100, 500, 2500} and τ ∈ {0.1, 0.01}; x and y axis are log
 scaled.
 
-### Comment {#h.l4pzkhlpwg9r .c29}
+### Comment
 
 According to Figure 3, error ES,i increases with the noise level. For
 the case where the size of matrix is 2500 and tau is 0.1, error is
@@ -406,7 +341,7 @@ terms of computation time.
 
 * * * * *
 
-Minimum Residual (MINRES) {#h.xomo3cwz8xz7 .c21}
+Minimum Residual (MINRES) 
 -------------------------
 
 MINRES can be taught of special case variation of GMRES as the names
@@ -417,7 +352,7 @@ iteration that uses only qn-1 and qn for the computation of qn+1. That
 removes the nested inner second for loop and achieves better
 computational efficiency.
 
-### ![](images/image25.png)^[[4]](#ftnt4)^ {#h.wyj7esz0xlls .c51}
+### ![](images/image25.png)^[[4]](#ftnt4)^ 
 
 The code below is the implementation of Lanczos based MINRES algorithm
 with added stopping criterion:
@@ -431,7 +366,7 @@ is not covered in class and not asked for.
 
 * * * * *
 
-### Code {#h.275bys5iyhpx .c29}
+### Code
 
   1function [x, n, error] = MINRES(A, b, maximum\_iteration\_number,
 tol)
@@ -525,17 +460,17 @@ Figure 4: ES,i values with respect to sigma for MINRES algorithm where
 size m ∈ {100, 500, 2500} and τ ∈ {0.1, 0.01}; x and y axis are log
 scaled.
 
-### Comment {#h.2n9p9b9xd7yg .c29}
+### Comment
 
 Please refer to [Comment section](#h.l4pzkhlpwg9r) Figure 3 as Figure 4
 is indistinguishably similar.
 
 * * * * *
 
-Detailed Analysis of CG {#h.x3b9mevz3kuu .c21}
+Detailed Analysis of CG 
 -----------------------
 
-### Stopping Criterion {#h.wc67uxdyg1tp .c29}
+### Stopping Criterion
 
 Norm of the residual is used for the stopping criterion which is:
 
@@ -554,7 +489,7 @@ also the Figures 11-13 shows that convergence does not always have to
 take place due to the matrix A being not positive definite and
 ill-conditioned.
 
-### Error Metric {#h.d8fe1ey05ab4 .c29}
+### Error Metric 
 
 ![](images/image19.png)
 
@@ -578,7 +513,7 @@ Figure 7: EO,i values with respect to n iterations for CG algorithm
 where size m = 100, σ = 1 and τ ∈ {0.1, 0.01}; x and y axis are log
 scaled.
 
-### Comment {#h.a9slcpcjyaju .c29}
+### Comment
 
 As it can be seen from the Figures 5-7, noise level does not have a
 significant effect on convergence of CG whereas tau has. For tau = 0.01,
@@ -607,7 +542,7 @@ Figure 10: EO,i values with respect to n iterations for CG algorithm
 where size m = 500, σ = 1 and τ ∈ {0.1, 0.01}; x and y axis are log
 scaled.
 
-### Comment {#h.r0zarb5tnb4h .c29}
+### Comment
 
 Figures 8-10, shows us that as the size of matrix m increases from 100
 to 500, convergence occurs in later iterations. The red line showing the
@@ -640,7 +575,7 @@ Figure 13: EO,i values with respect to n iterations for CG algorithm
 where size m = 2500, σ = 1 and τ ∈ {0.1, 0.01}; x and y axis are log
 scaled.
 
-### Comment {#h.opwa147cwzze .c29}
+### Comment
 
 As Figures 11-13 suggests, when matrix size m is 2500 the convergence
 line for tau = 0.01 is even moved to further along positive x direction.
@@ -662,7 +597,7 @@ spectrum as Figures 11-13 suggests.
 
 * * * * *
 
-Appendix {#h.xvindrov989h .c39}
+Appendix
 ========
 
 Codes {#h.4zdxa69rmph4 .c21}
